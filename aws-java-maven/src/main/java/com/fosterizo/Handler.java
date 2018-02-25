@@ -16,6 +16,10 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 
 	private static final Logger LOG = Logger.getLogger(Handler.class);
 
+	public String getCoolMessage() {
+		return "Fosterizo Rules!";
+	}
+
 	@Override
 	public ApiGatewayResponse handleRequest(Map<String, Object> input, Context context) {
 		BasicConfigurator.configure();
@@ -23,12 +27,12 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		String boiseTime = dtf.format(LocalDateTime.now(ZoneId.of("America/Boise")));
-		Response responseBody = new Response("Fosterizo Rules! It is currently " + boiseTime);
+		Response responseBody = new Response(getCoolMessage() + " It is currently " + boiseTime);
 
 		return ApiGatewayResponse.builder()
 				.setStatusCode(200)
 				.setObjectBody(responseBody)
-				.setHeaders(Collections.singletonMap("X-Powered-By", "Fosterizo Rules!"))
+				.setHeaders(Collections.singletonMap("X-Powered-By", getCoolMessage()))
 				.build();
 	}
 }

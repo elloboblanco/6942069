@@ -1,0 +1,31 @@
+# This file is the main config file for 6942069
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: 'fosterizo-6942069'
+
+# Pin a specific Serverless version
+frameworkVersion: '=1.26.0'
+
+provider:
+  name: 'aws'
+  runtime: 'java8'
+  stage: 'dev'
+  region: 'us-west-2'
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'dynamodb:*'
+      Resource: '*'
+
+package:
+  artifact: 'target/fosterizo-6942069-dev.jar'
+
+functions:
+  '6942069':
+    handler: 'com.fosterizo.Handler'
+    events:
+      - http:
+          path: '/6942069'
+          method: get

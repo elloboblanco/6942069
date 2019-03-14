@@ -7,6 +7,6 @@ import org.junit.Test;
 public class HandlerTest extends Handler {
   @Test
   public void happyDay() {
-    assertEquals("Fosterizo Rules!", this.getCoolMessage());
+    assertEquals("Suh Dude!", this.getCoolMessage());
   }
 }

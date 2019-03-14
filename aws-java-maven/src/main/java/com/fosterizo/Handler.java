@@ -17,7 +17,7 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 	private static final Logger LOG = Logger.getLogger(Handler.class);
 
 	public String getCoolMessage() {
-		return "Fosterizo Rules!";
+		return "Suh Dude!";
 	}
 
 	@Override

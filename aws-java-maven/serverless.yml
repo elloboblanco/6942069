@@ -6,7 +6,7 @@
 service: 'fosterizo-6942069'
 
 # Pin a specific Serverless version
-frameworkVersion: '=1.26.0'
+frameworkVersion: '=1.32.0'
 
 provider:
   name: 'aws'

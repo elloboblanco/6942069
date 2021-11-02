@@ -1,11 +1,6 @@
-# This file is the main config file for 6942069
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-
+org: 'elloboblanco'
+app: '6942069'
 service: 'fosterizo-6942069'
-
-# Pin a specific Serverless version
 frameworkVersion: '=2.64.1'
 
 provider:

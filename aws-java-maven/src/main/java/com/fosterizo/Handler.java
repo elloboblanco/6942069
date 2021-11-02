@@ -27,7 +27,7 @@ public class Handler implements RequestHandler<Map<String, Object>, ApiGatewayRe
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 		String boiseTime = dtf.format(LocalDateTime.now(ZoneId.of("America/Boise")));
-		Response responseBody = new Response(getCoolMessage() + " It is currently " + boiseTime);
+		Response responseBody = new Response(getCoolMessage() + " It is currently " + boiseTime + " in Boise, Idaho 🏔");
 
 		return ApiGatewayResponse.builder()
 				.setStatusCode(200)
